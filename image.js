@@ -146,6 +146,16 @@ const listaDeImagens = [
     return imagemEscolhida;
   }
   
+  function changePalImg(){
+    const imagemAleatoria = escolherImagemAleatoria();
+    const imagemElement = document.getElementById('suaImagem');
+    imagemElement.src = imagemAleatoria;
+  }
+
+  function verifyPalGuessed(){
+    
+  }
+
   // Exemplo de como usar a imagem aleatória ao carregar a página
   document.addEventListener('DOMContentLoaded', function () {
     const imagemAleatoria = escolherImagemAleatoria();
