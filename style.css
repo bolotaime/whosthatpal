@@ -3,6 +3,10 @@ body {
     font-family: Ubuntu;
 }
 
+.buttonTry{
+    margin: 0px 5px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -15,8 +19,36 @@ body {
     align-items: center;
 }
 
+.answerInput{
+    display: flex;
+}
+
 .palImage {
     -webkit-filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(100%);
     filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(0%);
     opacity: 1;
+}
+
+.palImageCorrect{
+
+}
+
+.answerPromptCorrect{
+    color: green;
+}
+
+.asnwerPromptWrong{
+    color: red;
+}
+
+.answerPromptHidden{
+    display: none;    
+}
+
+.tryAgainBoxHidden{
+    display: none;
+}
+
+.tryAgainBoxShow{
+    display: block;
 }

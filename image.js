@@ -127,10 +127,32 @@ const listaDeImagens = [
     const imagemAleatoria = escolherImagemAleatoria();
     const imagemElement = document.getElementById('suaImagem');
     imagemElement.src = imagemAleatoria;
-  }
+    imagemElement.className = "palImage";
+    document.getElementById("answerPrompt").className = "answerPromptHidden";
+    document.getElementById("tryAgainBox").className = "tryAgainBoxHidden";
+  }  
 
   function verifyPalGuessed(){
+    let answer = document.getElementById("answer").value;
+    let pathPal = document.getElementById("suaImagem").src;
+    let correctAnswer = pathPal.substring(pathPal.indexOf("resizerd/")+9,pathPal.indexOf("-image.png"));
     
+    console.log(answer);   
+    console.log(pathPal);
+    console.log(correctAnswer);
+
+    if(answer.toLocaleLowerCase() == correctAnswer.toLocaleLowerCase()){
+      document.getElementById("suaImagem").className = "palImageCorrect";
+      document.getElementById("answerPrompt").className = "answerPromptCorrect";
+      document.getElementById("answerPrompt").innerHTML = "ACERTÔ MISERÁVI";
+      document.getElementById("tryAgainBox").className = "tryAgainBoxShow";
+
+    }else{
+      document.getElementById("answerPrompt").className = "asnwerPromptWrong";
+      document.getElementById("answerPrompt").innerHTML = "BURRO DÁ ZERO PRA ELU";      
+    }
+
+    document.getElementById("answer").value = "";
   }
 
   // Exemplo de como usar a imagem aleatória ao carregar a página
@@ -138,4 +160,14 @@ const listaDeImagens = [
     const imagemAleatoria = escolherImagemAleatoria();
     const imagemElement = document.getElementById('suaImagem'); // Substitua 'suaImagem' pelo ID do elemento de imagem em seu HTML
     imagemElement.src = imagemAleatoria;
+    document.getElementById("answer").value = "";
+
+    var answerInput = document.getElementById("answer");
+    console.log(answerInput);
+    answerInput.addEventListener("keypress", function(event) {    
+      if (event.key === "Enter") {
+        event.preventDefault();      
+        document.getElementById("btnTry").click();
+      }
+    }); 
   });

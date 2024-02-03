@@ -21,10 +21,16 @@
         </div>
 
         <div class="answerArea">
-            <input type="text">
+            <div class="answerInput">
+                <input type="text" id="answer">
+                <button id="btnTry" class="buttonTry" onclick="verifyPalGuessed()">Chutar</button>
+            </div>
             <p class="disclaimer">Acertou?</p>
+            <h1 id="answerPrompt" class="answerPromptHidden"></h1>
+            <div id="tryAgainBox" class="tryAgainBoxHidden">
+                <button onclick="changePalImg()">MIM DÊ OUTRO PAPAI</button>
+            </div>
         </div>
-    </div>
-    <button onclick="changePalImg()">Change</button>
+    </div>    
 </body>
 </html>
