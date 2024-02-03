@@ -130,6 +130,8 @@ const listaDeImagens = [
     imagemElement.className = "palImage";
     document.getElementById("answerPrompt").className = "answerPromptHidden";
     document.getElementById("tryAgainBox").className = "tryAgainBoxHidden";
+    document.getElementById("answer").disabled = false;
+    document.getElementById("btnTry").disabled = false;
   }  
 
   function verifyPalGuessed(){
@@ -146,7 +148,8 @@ const listaDeImagens = [
       document.getElementById("answerPrompt").className = "answerPromptCorrect";
       document.getElementById("answerPrompt").innerHTML = "ACERTÔ MISERÁVI";
       document.getElementById("tryAgainBox").className = "tryAgainBoxShow";
-
+      document.getElementById("answer").disabled = true;
+      document.getElementById("btnTry").disabled = true;
     }else{
       document.getElementById("answerPrompt").className = "asnwerPromptWrong";
       document.getElementById("answerPrompt").innerHTML = "BURRO DÁ ZERO PRA ELU";      
